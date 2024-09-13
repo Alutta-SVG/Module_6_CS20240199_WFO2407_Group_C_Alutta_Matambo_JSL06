@@ -14,7 +14,7 @@ function displayMenuItems(menu) {
         // Create an element to represent the category
         const categoryHeading = document.createElement('h3');
         // Set the text content of the category element to the category name
-       
+        categoryHeading.textContent = category;
         // Append the category element to the menu container
 
         // Create an element to represent a list of items
