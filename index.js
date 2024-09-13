@@ -43,9 +43,9 @@ function addToOrder(itemName) {
     const orderList = document.getElementById('order-items');
     const orderTotal = document.getElementById('order-total');
     // Create a list item for the order
-
+    const orderItem = document.createElement('li');
     // Set the text content of the list item to the item name
-
+    orderItem.textContent = itemName;
     // Append the list item to the order items list
 
     // Calculate and update the total price
