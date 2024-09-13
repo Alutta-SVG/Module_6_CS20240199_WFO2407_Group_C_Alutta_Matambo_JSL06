@@ -9,6 +9,10 @@ const menu = {
 function displayMenuItems(menu) {
     // Get the menu container element from the HTML
     const container = document.getElementById('menu');
+    
+    // Clear any previous content
+    container.innerHTML = '';
+
     // Loop through each category and its items in the menu object
     for (const category in menu) {
         // Create an element to represent the category
@@ -22,6 +26,7 @@ function displayMenuItems(menu) {
         const itemsList = document.createElement('ul');
         // Append a list of items element to the menu container
         container.appendChild(itemsList);
+
         // Loop through the items in the category and create list items
         menu[category].forEach((item) => {
             // Create a list item element
@@ -31,26 +36,32 @@ function displayMenuItems(menu) {
             // Attach a click event listener to the list item to add it to the order
             listItem.addEventListener('click', () => manageOrderItem(listItem));
             // Append the list item to the list of items
-            itemsList.appendChild(listItem)
-    });
+            itemsList.appendChild(listItem);
+        });
+    }
+}
 
-            
-}}
+// Function to manage adding an item to the order
+function manageOrderItem(listItem) {
+    addToOrder(listItem.textContent);
+}
 
 // Callback function for adding an item to the order
 function addToOrder(itemName) {
     // Get the order items list and the order total element from the HTML
     const orderList = document.getElementById('order-items');
     const orderTotal = document.getElementById('order-total');
+    
     // Create a list item for the order
     const orderItem = document.createElement('li');
     // Set the text content of the list item to the item name
     orderItem.textContent = itemName;
     // Append the list item to the order items list
     orderList.appendChild(orderItem);
+
     // Calculate and update the total price
     let currentTotal = parseFloat(orderTotal.textContent.replace('R', '')) || 0;
-    currentTotal += 15;
+    currentTotal += 15; //R15 cost
     // Update the text content of the order total element with the new total
     orderTotal.textContent = `R${currentTotal.toFixed(2)}`;
 }
