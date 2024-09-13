@@ -49,7 +49,8 @@ function addToOrder(itemName) {
     // Append the list item to the order items list
     orderList.appendChild(orderItem);
     // Calculate and update the total price
-
+    let currentTotal = parseFloat(orderTotal.textContent.replace('R', '')) || 0;
+    currentTotal += 15;
     // Update the text content of the order total element with the new total
 }
 
