@@ -29,12 +29,13 @@ function displayMenuItems(menu) {
             // Set the text content of the list item element to the item name
             listItem.textContent = item;
             // Attach a click event listener to the list item to add it to the order
-
+            listItem.addEventListener('click', () => manageOrderItem(listItem));
             // Append the list item to the list of items
-    }
+            itemsList.appendChild(listItem)
+    });
 
             
-}
+}}
 
 // Callback function for adding an item to the order
 function addToOrder(itemName) {
