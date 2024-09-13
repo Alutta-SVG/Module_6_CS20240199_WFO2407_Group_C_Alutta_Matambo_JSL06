@@ -52,11 +52,13 @@ function addToOrder(itemName) {
     let currentTotal = parseFloat(orderTotal.textContent.replace('R', '')) || 0;
     currentTotal += 15;
     // Update the text content of the order total element with the new total
+    orderTotal.textContent = `R${currentTotal.toFixed(2)}`;
 }
 
 // Function to initialize the menu system
 function initMenuSystem(menu) {
     // Call the function to display menu items
+    displayMenuItems(menu);
 }
 
 // Start the menu system by calling the init function
