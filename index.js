@@ -16,6 +16,7 @@ function displayMenuItems(menu) {
         // Set the text content of the category element to the category name
         categoryHeading.textContent = category;
         // Append the category element to the menu container
+        container.appendChild(categoryHeading);
 
         // Create an element to represent a list of items
 
