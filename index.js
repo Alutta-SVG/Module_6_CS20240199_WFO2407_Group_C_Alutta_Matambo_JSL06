@@ -47,7 +47,7 @@ function addToOrder(itemName) {
     // Set the text content of the list item to the item name
     orderItem.textContent = itemName;
     // Append the list item to the order items list
-
+    orderList.appendChild(orderItem);
     // Calculate and update the total price
 
     // Update the text content of the order total element with the new total
